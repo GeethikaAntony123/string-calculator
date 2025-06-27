@@ -20,3 +20,10 @@ test('return number for single input', ()=> {
 test('return sum of two numbers', ()=> {
     expect(add("1,2")).toBe(3);
 });
+
+/**
+ * test for multiple inputs
+ */
+test('return sum of multiple numbers', ()=> {
+    expect(add("1,2,3,4")).toBe(10);
+});
