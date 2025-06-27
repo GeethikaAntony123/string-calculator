@@ -13,3 +13,10 @@ test('returns 0 for empty input', () => {
 test('return number for single input', ()=> {
     expect(add("1")).toBe(1);
 });
+
+/**
+ * test for two inputs
+ */
+test('return sum of two numbers', ()=> {
+    expect(add("1,2")).toBe(3);
+});

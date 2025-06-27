@@ -7,9 +7,9 @@
 function add(numbers) {
     //empty string returns 0
     if (numbers === "") return 0;
-    
-    //single input returns the input
-    if(!numbers.includes(",")) return parseInt(numbers);
+
+    const inputs = numbers.split(/,|\n/).map(Number);
+    return inputs.reduce((sum, n)=> sum + n, 0);
 }
 
 module.exports = add;
