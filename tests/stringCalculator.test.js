@@ -41,3 +41,10 @@ test('return sum by handling new line as delimiters', ()=> {
 test('return sum by handling custom delimiters', ()=> {
     expect(add("//;\n1;2")).toBe(3);
 });
+
+/**
+ * handles negative numbers
+ */
+test('throw exception in case of negative numbers', () => {
+    expect(() => add("1,-2,3,-4")).toThrow("negative numbers -2, -4 are not allowed");
+});
