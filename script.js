@@ -13,3 +13,4 @@ console.log(add("2,4,")); //6
 console.log(add("1\n")); //1
 console.log(add(" ")); //0
 console.log(add("//;;\n1;;2;;3")); //6
+console.log(add("1,a,3")); // throws invalid input error

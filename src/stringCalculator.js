@@ -7,6 +7,7 @@
 function add(numbers) {
     //empty string returns 0
     if (numbers === "") return 0;
+    
 
     //handle custom delimiters, 
     let delimiter = /,|\n/;
@@ -16,7 +17,13 @@ function add(numbers) {
         delimiter = new RegExp(inputs[0].slice(2)); //custom delimiter
         numbers = inputs[1];
     }
-    const nums = numbers.split(delimiter).map(Number);
+    //const nums = numbers.split(delimiter).map(Number);
+
+    const nums = numbers.split(delimiter).map(n => {
+        const parsed = Number(n);
+        if (isNaN(parsed)) throw new Error(`Invalid number: ${n}`);
+        return parsed;
+      });
 
     //Handles negtive numbers, throws error if negtative number(s) present in input
     const negativeNums = nums.filter(n => n < 0);

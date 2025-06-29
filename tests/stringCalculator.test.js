@@ -48,3 +48,10 @@ test('return sum by handling custom delimiters', ()=> {
 test('throw exception in case of negative numbers', () => {
     expect(() => add("1,-2,3,-4")).toThrow("negative numbers -2, -4 are not allowed");
 });
+
+/**
+ * handles invalid inputs
+ */
+test('throws excpetion on non-numeric or invlaid input', () => {
+    expect(() => add("1,a,3")).toThrow("Invalid number: a");
+});
